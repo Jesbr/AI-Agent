@@ -1,23 +1,33 @@
-from functions.get_files_info import get_files_info
+from functions.run_python import run_python_file
+
+
+#def test():
+#    result = get_file_content("calculator", "lorem.txt")
+#    print("Result for lorem:")
+#    print(result)
 
 
 def test():
-    result = get_files_info("calculator", ".")
-    print("Result for current directory:")
-    print(result)
-    print("")
-
-    result = get_files_info("calculator", "pkg")
-    print("Result for 'pkg' directory:")
+    result = run_python_file("calculator", "main.py")
+    print("Result for run_python_file:")
     print(result)
 
-    result = get_files_info("calculator", "/bin")
-    print("Result for '/bin' directory:")
+    result = run_python_file("calculator", "main.py", ["3 + 5"])
+    print("Result for run_python_file:")
     print(result)
 
-    result = get_files_info("calculator", "../")
-    print("Result for '../' directory:")
+    result = run_python_file("calculator", "tests.py")
+    print("Result for run_python_file:")
     print(result)
+
+    result = run_python_file("calculator", "../main.py")
+    print("Result for run_python_file:")
+    print(result)
+
+    result = run_python_file("calculator", "nonexistent.py")
+    print("Result for run_python_file:")
+    print(result)
+    
 
 
 if __name__ == "__main__":
